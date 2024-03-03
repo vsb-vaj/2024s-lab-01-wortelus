@@ -7,8 +7,15 @@
 
 // Your code:
 const arrayOfMultiples = (num, length) => {
-    // ... write code ...
+    let array = []
+    for (let i = 1; i <= length; i++) {
+        array.push(num * i)
+    }
+    return array
 };
+console.log(arrayOfMultiples(7, 5))
+console.log(arrayOfMultiples(12, 10))
+console.log(arrayOfMultiples(17, 6))
 
 // 2 =================================
 // Change direction of array
@@ -20,8 +27,15 @@ const arrayOfMultiples = (num, length) => {
 
 // Your code:
 const changeDirection = (array) => {
-// ... write code ...
+    let output = []
+    for (let i = array.length - 1; i >= 0; i--) {
+        output.push(array[i])
+    }
+    return output;
 };
+console.log(changeDirection([0, 1, 2, 3]))
+console.log(changeDirection([]))
+console.log(changeDirection([1, 2]))
 
 // 3 =================================
 // Create function that takes two arrays and return object with two keys - bigger array, sum all numbers
@@ -31,5 +45,13 @@ const changeDirection = (array) => {
 
 // Your code:
 const biggerArray = (array1, array2) => {
-// ... write code ...
+    let sum1 = array1.reduce((a, b) => a + b, 0)
+    let sum2 = array2.reduce((a, b) => a + b, 0)
+    if (sum1 > sum2) {
+        return { array: array1, sum: sum1 }
+    } else {
+        return { array: array2, sum: sum2 }
+    }
 };
+console.log(biggerArray([1, 2, 3, 4, 5], [50, 50]))
+console.log(biggerArray([1, 2, 3], [2, 3, 4]))
